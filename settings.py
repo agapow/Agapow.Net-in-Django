@@ -151,6 +151,13 @@ INSTALLED_APPS = (
 	'menus', 
 	'south', 
 	'sekizai', 
+'cms.plugins.flash',
+'cms.plugins.googlemap',
+'cms.plugins.link',
+'cms.plugins.snippet',
+'cms.plugins.text',
+'cms.plugins.twitter',
+	'easy_thumbnails',
 	'filer',
 	'cmsplugin_filer_file',
 	'cmsplugin_filer_folder',
@@ -181,3 +188,12 @@ LOGGING = {
         },
     }
 }
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+
