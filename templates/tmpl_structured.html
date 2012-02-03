@@ -1,22 +1,15 @@
-{% extends "base.html" %}
+{% extends "tmpl_plain.html" %}
 {% load cms_tags %}
 
-{% block base_content %}
+{% block content %}
 	<h2 class="pagetitle">INSERT TITLE HERE</h2>
 	
 	<p class="description">
 		{% placeholder content_description with TextInput %}
 	</p>
 	
-	{% placeholder "body_references" or %}There is no content.{% endplaceholder %}
-	{% placeholder "body_attachments" with FileBrowseInput or %}
-		There is no content.
-	{% endplaceholder %}
-	{% placeholder "body_also" or %}There is no content.{% endplaceholder %}
+	{% placeholder "mainbody" %}
+	{% block mainbody %}{% endblock %}
+
 {% endblock %}
-
-
-wierd
-
-weird
 

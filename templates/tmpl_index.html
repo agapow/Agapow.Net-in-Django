@@ -1,7 +1,12 @@
-{% extends "base.html" %}
+{% extends "tmpl_structured.html" %}
 {% load cms_tags %}
 
-{% block content %}
-	THIS IS THE MAIN CONTENT
-{% endblock %}
+{% block mainbody %}
 
+	{% placeholder "mainbody_content" %}
+
+	# list the contents, maybe 3 most recent changes then an alphabetic of all
+
+	{% placeholder "mainbody_alsosee" or %}There are no alsosees.{% endplaceholder %}
+	
+{% endblock %}

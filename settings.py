@@ -129,34 +129,42 @@ TEMPLATE_DIRS = (
 )
 
 CMS_TEMPLATES = (
-    ('tmpl_main.html', 'Main template'),
-    ('tmpl_index.html', 'Index page template'),
-	 ('tmpl_page.html', 'Page or article template'),
+    ('tmpl_plain.html', 'Main template'),
+    ('tmpl_front.html', 'Front page with latest changes'),
+	 ('tmpl_structured.html', 'Page with title and description'),
+	 ('tmpl_article.html', 'Structured article with references & attachments'),
+	 ('tmpl_index.html', 'Folder front page or index'),
+	 ('tmpl_software.html', 'Homepage for software'),
 )
 
 
 INSTALLED_APPS = (
+	# core django
 	'django.contrib.auth',
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
 	'django.contrib.sites',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
-	# Uncomment the next line to enable the admin:
+	
+	# admin
 	'django.contrib.admin',
-	# Uncomment the next line to enable admin documentation:
 	# 'django.contrib.admindocs',
+	
+	# django-cms
 	'cms', 
 	'mptt', 
 	'menus', 
 	'south', 
 	'sekizai', 
-'cms.plugins.flash',
-'cms.plugins.googlemap',
-'cms.plugins.link',
-'cms.plugins.snippet',
-'cms.plugins.text',
-'cms.plugins.twitter',
+	'cms.plugins.flash',
+	'cms.plugins.googlemap',
+	'cms.plugins.link',
+	'cms.plugins.snippet',
+	'cms.plugins.text',
+	'cms.plugins.twitter',
+	
+	# django-filer, prerequisites & plugins
 	'easy_thumbnails',
 	'filer',
 	'cmsplugin_filer_file',
