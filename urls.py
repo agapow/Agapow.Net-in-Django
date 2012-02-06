@@ -2,6 +2,8 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 
+from cms.sitemaps import CMSSitemap
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -16,6 +18,11 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 	 (r'^admin/', include(admin.site.urls)),
 	 url(r'^', include('cms.urls')),
+
+	url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap',
+		{'sitemaps': {'cmspages': CMSSitemap}}
+	),
+
 )
 
 if settings.DEBUG:

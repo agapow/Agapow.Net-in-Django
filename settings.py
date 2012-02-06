@@ -174,6 +174,9 @@ INSTALLED_APPS = (
 	'cmsplugin_filer_image',
 	'cmsplugin_filer_teaser',
 	'cmsplugin_filer_video',
+
+	# google sitemap
+	'django.contrib.sitemaps',
 )
 
 # A sample logging configuration. The only tangible logging
